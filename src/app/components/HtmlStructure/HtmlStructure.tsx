@@ -91,7 +91,7 @@ export default function HtmlStructure({ data }: HtmlStructureProps) {
                 : tag.description;
 
             return (
-              <Group key={tag.name} position="apart">
+              <Group key={tag.name} justify="apart">
                 <Text>{`<${tag.name}> - ${text}`}</Text>
                 <Badge color={color} variant="light">
                   {count}
