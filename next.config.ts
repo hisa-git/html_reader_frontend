@@ -3,9 +3,13 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["@mantine/core", "@mantine/hooks"],
   },
-  webpack: (config, { isServer }) => {
-    config.optimization.sideEffects = false;
-    return config;
+  reactStrictMode: true,
+  swcMinify: true,
+  compiler: {
+    styledComponents: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 };
 
