@@ -6,8 +6,10 @@ interface ShowAdditionalState {
   show: () => void;
 }
 
-export const useShowAdditionalComponents = create<ShowAdditionalState>((set) => ({
-  showAdditionalComponents: true,
-  hide: () => set({ showAdditionalComponents: false }),
-  show: () => set({ showAdditionalComponents: true }),
-}));
+export const useShowAdditionalComponents = create<ShowAdditionalState>(
+  (set) => ({
+    showAdditionalComponents: true,
+    hide: () => set({ showAdditionalComponents: false }),
+    show: () => set({ showAdditionalComponents: true }),
+  })
+);

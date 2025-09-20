@@ -14,25 +14,25 @@ const links = [
 export function FooterCentered() {
   const { showAdditionalComponents } = useShowAdditionalComponents();
 
-  const items = links.map((link) => (
-    <Anchor
-      c="dimmed"
-      key={link.label}
-      href={link.link}
-      lh={1}
-      onClick={(event) => event.preventDefault()}
-      size="sm"
-    >
-      {link.label}
-    </Anchor>
-  ));
-
   if (!showAdditionalComponents) return null;
 
   return (
     <div className={classes.footer}>
       <div className={classes.inner}>
-        <Group className={classes.links}>{items}</Group>
+        <Group className={classes.links}>
+          {links.map((link) => (
+            <Anchor
+              c="dimmed"
+              key={link.label}
+              href={link.link}
+              lh={1}
+              onClick={(event) => event.preventDefault()}
+              size="sm"
+            >
+              {link.label}
+            </Anchor>
+          ))}
+        </Group>
         <Group gap="xs" justify="flex-end" wrap="nowrap"></Group>
       </div>
     </div>
