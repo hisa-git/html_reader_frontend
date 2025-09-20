@@ -4,10 +4,6 @@ const nextConfig = {
     optimizePackageImports: ["@mantine/core", "@mantine/hooks"],
   },
   reactStrictMode: true,
-  swcMinify: true,
-  compiler: {
-    styledComponents: true,
-  },
   eslint: {
     ignoreDuringBuilds: true,
   },
