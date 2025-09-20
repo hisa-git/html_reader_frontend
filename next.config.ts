@@ -3,7 +3,7 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ["@mantine/core", "@mantine/hooks"],
   },
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
     config.optimization.sideEffects = false;
     return config;
   },
