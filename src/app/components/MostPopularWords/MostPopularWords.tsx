@@ -10,7 +10,7 @@ import {
 } from "@mantine/core";
 import { useState } from "react";
 
-export default function MostPopularWords(props) {
+export default function MostPopularWords(props: unknown) {
   const [showTop, setShowTop] = useState(10);
   const [showDensity, setShowDensity] = useState(10);
 
