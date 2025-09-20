@@ -28,9 +28,8 @@ export default function TagCounter() {
   const [error, setError] = useState<string | null>(null);
   const { showAdditionalComponents, show, hide } =
     useShowAdditionalComponents();
-
   const analyzeUrl = async (url: string) => {
-    const response = await fetch("http://localhost:8000/analyze", {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/analyze`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
