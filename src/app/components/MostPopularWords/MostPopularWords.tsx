@@ -1,5 +1,14 @@
 "use client";
 // @ts-nocheck
+type MostPopularWordsProps = {
+  data?: {
+    content?: {
+      top_keywords?: { word: string; count: number }[];
+      keyword_density?: { word: string; density: number }[];
+    };
+  };
+};
+
 import {
   Title,
   Text,
@@ -11,7 +20,7 @@ import {
 } from "@mantine/core";
 import { useState } from "react";
 
-export default function MostPopularWords(props: any) {
+export default function MostPopularWords(props: MostPopularWordsProps) {
   const [showTop, setShowTop] = useState(10);
   const [showDensity, setShowDensity] = useState(10);
 
