@@ -1,5 +1,4 @@
 "use client";
-// @ts-nocheck
 
 import {
   Title,
@@ -11,16 +10,36 @@ import {
   Button,
 } from "@mantine/core";
 import { useState } from "react";
+
+interface Keyword {
+  word: string;
+  count: number;
+}
+
+interface KeywordDensity {
+  word: string;
+  density: number;
+}
+
+interface ContentData {
+  top_keywords?: Keyword[];
+  keyword_density?: KeywordDensity[];
+}
+
+interface MostPopularWordsProps {
+  data?: {
+    content?: ContentData;
+  };
+}
+
 export default function MostPopularWords({
   data = { content: {} },
-}: {
-  data?: { content?: any };
-}) {
-  const topKeywords = props.data?.content?.top_keywords || [];
-  const keywordDensity = props.data?.content?.keyword_density || [];
+}: MostPopularWordsProps) {
+  const topKeywords: Keyword[] = data.content?.top_keywords || [];
+  const keywordDensity: KeywordDensity[] = data.content?.keyword_density || [];
 
-  const [showTop, setShowTop] = useState(10);
-  const [showDensity, setShowDensity] = useState(10);
+  const [showTop, setShowTop] = useState<number>(10);
+  const [showDensity, setShowDensity] = useState<number>(10);
 
   return (
     <>
