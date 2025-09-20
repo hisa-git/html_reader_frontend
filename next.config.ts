@@ -1,7 +1,13 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    optimizePackageImports: ['@mantine/core', '@mantine/hooks']
+  },
+  // Дополнительная оптимизация
+  webpack: (config) => {
+    config.optimization.sideEffects = false
+    return config
+  }
+}
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+module.exports = nextConfig
