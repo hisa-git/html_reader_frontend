@@ -1,13 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    optimizePackageImports: ['@mantine/core', '@mantine/hooks']
+    optimizePackageImports: ["@mantine/core", "@mantine/hooks"],
   },
   // Дополнительная оптимизация
-  webpack: (config) => {
-    config.optimization.sideEffects = false
-    return config
-  }
-}
+  webpack: (config: any) => {
+    config.optimization.sideEffects = false;
+    return config;
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
