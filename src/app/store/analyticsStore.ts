@@ -1,7 +1,13 @@
-import { create } from 'zustand'
+import { create } from "zustand";
 
-export const useShowAdditionalComponents = create((set) => ({
+interface ShowAdditionalState {
+  showAdditionalComponents: boolean;
+  hide: () => void;
+  show: () => void;
+}
+
+export const useShowAdditionalComponents = create<ShowAdditionalState>((set) => ({
   showAdditionalComponents: true,
   hide: () => set({ showAdditionalComponents: false }),
   show: () => set({ showAdditionalComponents: true }),
-}))
+}));
