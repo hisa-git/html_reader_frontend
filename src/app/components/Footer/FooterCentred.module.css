@@ -1,26 +1,19 @@
+/* FooterCentred.module.css */
 .footer {
-  justify-content: center;
-  align-content: center;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
-  display: flex;
-  flex: 0 0 auto;
   border-top: 1px solid
     light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-top: auto; /* вот это ключ */
 }
 
 .inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   padding: var(--mantine-spacing-md) var(--mantine-spacing-md);
-
-  @media (max-width: $mantine-breakpoint-sm) {
-    flex-direction: column;
-  }
 }
 
 .links {

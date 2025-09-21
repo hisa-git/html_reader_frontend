@@ -9,7 +9,7 @@ export default function StepperSeo() {
 
   return (
     <Stack gap="md" p="md">
-      <Stepper iconPosition="right" active={0}>
+      <Stepper iconPosition="right" active={-1}>
         <Stepper.Step label="Шаг 1" description="Вставьте ссылку на ваш сайт" />
         <Stepper.Step
           label="Шаг 2"

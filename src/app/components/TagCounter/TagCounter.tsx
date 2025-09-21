@@ -18,6 +18,8 @@ import { IconSearch, IconAlertCircle, IconCheck } from "@tabler/icons-react";
 import MostPopularWords from "../MostPopularWords/MostPopularWords";
 import HtmlStructure from "../HtmlStructure/HtmlStructure";
 import TechnicalInfo from "../TechnicalInfo/TechnicalInfo";
+import InnerFiles from "../InnerFiles/InnerFiles"
+
 import { FooterCentered } from "../Footer/FooterCentred";
 import { useShowAdditionalComponents } from "@/app/store/analyticsStore";
 
@@ -53,13 +55,13 @@ export default function TagCounter() {
         setData(null);
       } else {
         setData(result);
+        hide();
       }
     } catch (err) {
       setError("Ошибка подключения к серверу");
       setData(null);
     } finally {
       setLoading(false);
-      hide();
     }
   };
 
@@ -115,7 +117,6 @@ export default function TagCounter() {
         {/* Результаты анализа */}
         {data && (
           <Stack gap="md">
-            {/* Основная информация */}
             <Card shadow="sm" padding="lg" radius="md" withBorder>
               <Stack gap="sm">
                 <Group justify="space-between">
@@ -204,10 +205,11 @@ export default function TagCounter() {
 
             {/* Техническая информация */}
             <TechnicalInfo data={data}></TechnicalInfo>
+            {/*Внутренние файлы */}
+            <InnerFiles data = {data}></InnerFiles>
           </Stack>
         )}
       </Stack>
-      {showAdditionalComponents && <FooterCentered></FooterCentered>}
     </>
   );
 }

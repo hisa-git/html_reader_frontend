@@ -8,6 +8,7 @@ import {
   Text,
   Badge,
   Code,
+  Spoiler,
   SimpleGrid,
 } from "@mantine/core";
 
@@ -22,9 +23,6 @@ export default function TechnicalInfo({ data }: any) {
   const loadTime = data.technical?.load_time_seconds?.toFixed(2) ?? "-";
   const pageSize = formatBytes(data.technical?.page_size_bytes);
   const statusCode = data.technical?.status_code ?? "-";
-  const robots = data.technical?.robots
-    ?.split(/(?=User-agent|Disallow|Allow|Sitemap)/)
-    .join("\n");
 
   return (
     <>
@@ -55,16 +53,10 @@ export default function TechnicalInfo({ data }: any) {
                 {statusCode}
               </Badge>
             </Group>
-
-            <Stack gap={2}>
-              <Text>robots.txt:</Text>
-              <Code block>{robots}</Code>
-            </Stack>
           </Stack>
-          <Stack>
+          <Stack gap="sm">
             <Text size="sm">
-              Время загрузки страницы влияет на ранжирование в поисковых
-              системах. Оптимальное время — до 3 секунд.
+              Время загрузки страницы напрямую влияет на ранжирование. Оптимальное время - до 2 секунд.
             </Text>
             <Text size="sm">
               Размер страницы влияет на скорость загрузки и UX. Чем меньше, тем
@@ -73,10 +65,6 @@ export default function TechnicalInfo({ data }: any) {
             <Text size="sm">
               HTTP статус 200 означает, что страница доступна. Любые ошибки
               снижают SEO.
-            </Text>
-            <Text size="sm">
-              Файл robots.txt управляет индексированием страниц поисковыми
-              системами.
             </Text>
           </Stack>
         </SimpleGrid>

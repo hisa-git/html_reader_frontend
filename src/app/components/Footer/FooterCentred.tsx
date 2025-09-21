@@ -1,7 +1,6 @@
 "use client";
 import { Anchor, Group } from "@mantine/core";
 import classes from "./FooterCentred.module.css";
-import { useShowAdditionalComponents } from "@/app/store/analyticsStore";
 
 const links = [
   { link: "#", label: "Contact" },
@@ -12,12 +11,8 @@ const links = [
 ];
 
 export function FooterCentered() {
-  const { showAdditionalComponents } = useShowAdditionalComponents();
-
-  if (!showAdditionalComponents) return null;
-
   return (
-    <div className={classes.footer}>
+    <footer className={classes.footer}>
       <div className={classes.inner}>
         <Group className={classes.links}>
           {links.map((link) => (
@@ -35,6 +30,6 @@ export function FooterCentered() {
         </Group>
         <Group gap="xs" justify="flex-end" wrap="nowrap"></Group>
       </div>
-    </div>
+    </footer>
   );
 }
