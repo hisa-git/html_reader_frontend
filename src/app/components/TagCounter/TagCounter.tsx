@@ -73,7 +73,8 @@ export default function TagCounter() {
   return (
     <>
       <Stack gap="md" p="md">
-        <Title order={2}>SEO оптимизатор</Title>
+        <Title order={1}>SEO анализатор</Title>
+        <Title order={2}>Быстрая и глубокая аналитика для настройки выдачи сайта в поисковых системах</Title>
 
         {/* Форма ввода */}
         <Card shadow="sm" padding="lg" radius="md" withBorder>
@@ -174,6 +175,7 @@ export default function TagCounter() {
                 </SimpleGrid>
               </Stack>
             </Card>
+            {/*СТРУКТУРА HTML */}
             <HtmlStructure data={data}></HtmlStructure>
 
             <Card shadow="sm" padding="lg" radius="md" withBorder>

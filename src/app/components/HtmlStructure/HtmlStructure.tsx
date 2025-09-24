@@ -28,13 +28,14 @@ function formatTagText(tagName: string, count: number) {
 }
 
 function getTagColor(tagName: string, count: number) {
+  // Сначала проверяем на ноль - все нули будут серыми
+  if (count === 0) return "gray";
+  
   if (["h1", "h2", "h3"].includes(tagName)) {
-    if (count === 0) return "red";
     if (count > 3) return "yellow";
     return "green";
   }
   if (tagName === "img") {
-    if (count === 0) return "red";
     if (count > 10) return "yellow";
     return "green";
   }

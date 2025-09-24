@@ -5,18 +5,20 @@
   height: 40px;
   display: flex;
   align-items: center;
-  margin-top: auto; /* вот это ключ */
+  margin-top: auto;
 }
 
 .inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   padding: var(--mantine-spacing-md) var(--mantine-spacing-md);
 }
 
 .links {
+  display: flex;
+  justify-self: center;
   @media (max-width: $mantine-breakpoint-sm) {
     margin-top: var(--mantine-spacing-lg);
     margin-bottom: var(--mantine-spacing-sm);

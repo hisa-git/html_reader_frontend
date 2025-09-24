@@ -1,5 +1,5 @@
 "use client";
-// @ts-nocheck
+
 import {
   Card,
   Stack,
@@ -7,8 +7,6 @@ import {
   Group,
   Text,
   Badge,
-  Code,
-  Spoiler,
   SimpleGrid,
 } from "@mantine/core";
 

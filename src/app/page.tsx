@@ -12,8 +12,8 @@ export default function Home() {
         minHeight: "100vh",
       }}
     >
+      <Header />
       <main style={{ flex: 1 }}>
-        <Header />
         <TagCounter />
         <StepperSeo />
       </main>
